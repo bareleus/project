@@ -1,0 +1,9 @@
+#!/bin/bash
+config-pin p9.12 gpio
+echo out > /sys/class/gpio/gpio60/direction
+config-pin p8.16 gpio_pu
+
+echo "Building the application!"
+g++ -Wall publish.cpp GPIO.cpp AnalogIn.cpp -o publish -lpaho-mqtt3c -pthread
+g++ -Wall subscribe.cpp GPIO.cpp LED_display.cpp -o subscribe -lpaho-mqtt3c -pthread
+echo "Finished!"
