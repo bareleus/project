@@ -14,7 +14,7 @@ using namespace exploringBB;
 #define TOPIC1      "bareleus/feeds/project.temperature"
 #define TOPIC2      "bareleus/feeds/project.button"
 #define AUTHMETHOD "bareleus"
-#define AUTHTOKEN  "aio_jHVb59yWmxu0bfwqf2kpsK03ka60"
+#define AUTHTOKEN  "aio_dSzD436GaB3AaF2VS1BlElGIyjRV"
 #define QOS        1
 #define TIMEOUT    10000L
 
