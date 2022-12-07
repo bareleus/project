@@ -17,7 +17,7 @@ using namespace exploringBB;
 #define TOPIC1       "bareleus/feeds/project.gpio-led"
 #define TOPIC2       "bareleus/feeds/project.led-display"
 #define AUTHMETHOD  "bareleus"
-#define AUTHTOKEN   "aio_UFVb23pNlfIcMHEcF3gpjHpHhQBx"
+#define AUTHTOKEN   "aio_jHVb59yWmxu0bfwqf2kpsK03ka60"
 #define QOS         1
 #define TIMEOUT     10000L
 
@@ -41,22 +41,23 @@ int msgarrvd(void *context, char *topicName, int topicLen, MQTTClient_message *m
     // Create objects
     // GPIO
     GPIO light(60);
-    // LEDs display
-    LED leds[4] = { LED(0), LED(1), LED(2), LED(3)};
-
+    
     // GPIO display
     if (button == "ON" || button == "OFF"){
     	cout << "The GPIO LED is turning " << payloadptr << endl;
     	button == "ON" ? light.setValue(HIGH) : light.setValue(LOW);	
     }
     // LEDs display
-    if (button == "0" || button == "1" || button == "2" || button == "3"){
+    LED leds[4] = { LED(0), LED(1), LED(2), LED(3)};
+    // LEDs display
+    if (button == "0" || button == "1" || button == "2" || button == "3"){   
        if(leds[stoi(button)].status() == "1"){
 	   cout << "The LED #" << payloadptr << " is turning OFF" << endl;
 	   leds[stoi(button)].turnOff();}
        else if(leds[stoi(button)].status() == "0"){
 	   cout << "The LED #" << payloadptr << " is turning ON" << endl;
 	   leds[stoi(button)].turnOn();} 
+       else {leds[stoi(button)].turnOn();}
     }
     MQTTClient_freeMessage(&message);
     MQTTClient_free(topicName);

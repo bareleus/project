@@ -11,10 +11,10 @@ using namespace exploringBB;
 //Please replace the username, feed and token with your values
 #define ADDRESS    "tcp://io.adafruit.com"
 #define CLIENTID   "Beagle1"
-#define TOPIC1      "bareleus/feeds/weather.thientemp"
+#define TOPIC1      "bareleus/feeds/project.temperature"
 #define TOPIC2      "bareleus/feeds/project.button"
 #define AUTHMETHOD "bareleus"
-#define AUTHTOKEN  "aio_UFVb23pNlfIcMHEcF3gpjHpHhQBx"
+#define AUTHTOKEN  "aio_jHVb59yWmxu0bfwqf2kpsK03ka60"
 #define QOS        1
 #define TIMEOUT    10000L
 
